@@ -15,10 +15,12 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(bullet);
+        //Destroy(bullet);
+        PoolManager.Instance.ReturnObjectToPool(this.gameObject);
     }
     void tickTickBoom()
     {
-        Destroy(bullet);
+        //Destroy(bullet);
+        PoolManager.Instance.ReturnObjectToPool(this.gameObject);
     }
 }
