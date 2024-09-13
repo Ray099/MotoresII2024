@@ -26,7 +26,7 @@ public class PointManager : MonoBehaviour
 
     public void AddPoints(int _value)
     {
-        score *= _value;
+        score += _value;
     }
 
     public void RemovePoints(int _value)

@@ -7,6 +7,7 @@ public class PointUI : MonoBehaviour
 {
     //variables
     public TMP_Text scoreText;
+    new Sprite eventSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PointUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //scoreText.text = PointManager.instance.GetScore().ToString();
+        scoreText.text = PointManager.instance.GetScore().ToString();
     }
 
     public void OnClick_AddPoints()
@@ -28,5 +29,14 @@ public class PointUI : MonoBehaviour
     {
         PointManager.instance.RemovePoints(10);
 
+    }
+
+    public void OnClick_NoLlegoElProfeEvent()
+    {
+        object[] parameters = new object[3];
+        parameters[0] = "Motores 2";
+        parameters[1] = Color.red;
+        parameters[2] = eventSprite;
+        EventManager.m_Instance.InvokeEvent<NoLlegoElProfeEvent>(new NoLlegoElProfeEvent(parameters));
     }
 }
